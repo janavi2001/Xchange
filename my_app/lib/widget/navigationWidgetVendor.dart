@@ -48,9 +48,9 @@ class NavigationDrawerWidget extends StatelessWidget {
   }
 
   Widget buildHeader({
-    required String urlImage,
-    required String name,
-    required String email,
+    String urlImage,
+    String name,
+    String email,
   }) =>
       InkWell(
         child: Container(
@@ -86,9 +86,9 @@ class NavigationDrawerWidget extends StatelessWidget {
       );
 
   Widget buildMenuItem({
-    required String text,
-    required IconData icon,
-    VoidCallback? onClicked,
+    String text,
+    IconData icon,
+    VoidCallback onClicked,
   }) {
     final color = Colors.white;
     final hoverColor = Colors.white70;
@@ -105,9 +105,9 @@ class NavigationDrawerWidget extends StatelessWidget {
 
     switch (index) {
       case 0:
-        // Navigator.of(context).push(MaterialPageRoute(
-        //   builder: (context) => ,
-        // ));
+      // Navigator.of(context).push(MaterialPageRoute(
+      //   builder: (context) => ,
+      // ));
     }
   }
 }
