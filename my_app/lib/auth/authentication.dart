@@ -28,7 +28,7 @@ class App extends StatelessWidget {
         // Once complete, show your application
         if (snapshot.connectionState == ConnectionState.done) {
           return MaterialApp(
-            title: 'Phone Verification',
+            title: 'Phone Verification1',
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
                 primaryColor: Colors.yellow,
