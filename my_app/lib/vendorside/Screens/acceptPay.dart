@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 
-class acceptPay extends StatefulWidget {
-  const acceptPay({key}) : super(key: key);
+class acceptPay extends StatelessWidget {
+  const acceptPay({  key , this.name ,this.docid}) : super(key: key);
+  final String name;
+  final String docid;
+  
 
-  @override
-  _acceptPayState createState() => _acceptPayState();
-}
-
-
-class _acceptPayState extends State<acceptPay> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +16,7 @@ class _acceptPayState extends State<acceptPay> {
       ),
       body: ListView(padding: EdgeInsets.all(24), children: [
         const SizedBox(
-          height: 150,
+          height: 100,
         ),
         Text(
           'Amount',
@@ -38,22 +35,17 @@ class _acceptPayState extends State<acceptPay> {
           height: 50,
         ),
         Text(
-          "Name",
+          "Name : $name",
           style: TextStyle(color: Colors.blue, fontSize: 20),
           textAlign: TextAlign.left,
         ),
-        const SizedBox(
-          height: 15,
-        ),
-        Text(
-          "Ph no",
-          style: TextStyle(color: Colors.blue, fontSize: 20),
-          textAlign: TextAlign.left,
-        ),
+        
         const SizedBox(
           height: 50,
         ),
-        TextField(),
+        TextField(
+          
+        ),
         Row(
           children: [
             ElevatedButton(onPressed: () {}, child: Text("Accept"),style: ElevatedButton.styleFrom(primary: Colors.green),),

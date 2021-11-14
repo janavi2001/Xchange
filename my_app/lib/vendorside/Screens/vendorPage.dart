@@ -30,17 +30,18 @@ class _VendorPageState extends State<VendorPage> {
           iconTheme: IconThemeData(color: Colors.black),
         ),
         body: StreamBuilder<QuerySnapshot>(
-  stream: firestore.collection('VENDOR').doc("1234").collection("REQUESTS").snapshots(),
+  stream: firestore.collection('VENDOR').doc("0000").collection("REQUESTS").snapshots(),
   builder: (_, snapshot) {
     if (snapshot.hasError) return Text('Error = ${snapshot.error}');
 
     if (snapshot.hasData) {
       final docs = snapshot.data.docs;
       return ListView.builder(
+        
         itemCount: docs.length,
         itemBuilder: (_, i) {
           final data = docs[i].data();
-          return ItemWidget(name: data['otp'], amt: data['amt']);
+          return ItemWidget(name: data['name'], amt: data['requestamt'],docid : data['docid']);
         },
       );
     }
