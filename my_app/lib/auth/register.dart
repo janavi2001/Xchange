@@ -357,7 +357,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
       isLoading = true;
     });
     debugPrint('Gideon test 1');
-    var phoneNumber = '+27 ' + cellnumberController.text.toString();
+    var phoneNumber = '+91 ' + cellnumberController.text.toString();
     debugPrint('Gideon test 2');
     var verifyPhoneNumber = _auth.verifyPhoneNumber(
       phoneNumber: phoneNumber,
