@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:my_app/userside/paymentScreen.dart';
 
@@ -19,6 +20,8 @@ class _cashtodigState extends State<digtocash> {
     String number = Random().nextInt(9999).toString().padLeft(4, '0');
 
     CollectionReference users = FirebaseFirestore.instance.collection('users');
+    
+    final FirebaseAuth _auth = FirebaseAuth.instance;
 
     final myController = TextEditingController();
 
@@ -26,7 +29,7 @@ class _cashtodigState extends State<digtocash> {
       // Call the user's CollectionReference to add a new user
       try {
       await users
-          .doc("uwxaUTG5kMOJP6AwKvLgm3wzgqk1")
+          .doc(_auth.currentUser.uid)
           .update(
         {
           'otp': number,

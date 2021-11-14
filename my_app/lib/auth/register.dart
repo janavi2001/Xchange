@@ -236,6 +236,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                                             cellnumberController
                                                                 .text
                                                                 .trim(),
+                                                        'documentid':_auth.currentUser.uid,
+                                                        
                                                       },
                                                           SetOptions(
                                                               merge:

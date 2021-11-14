@@ -31,8 +31,8 @@ class App extends StatelessWidget {
             title: 'Phone Verification',
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
-                primaryColor: Colors.white,
-                primarySwatch: Colors.white,
+                primaryColor: Colors.yellow,
+                primarySwatch: Colors.yellow,
                 inputDecorationTheme: InputDecorationTheme(
                     labelStyle: TextStyle(color: Colors.grey)),
                 backgroundColor: Colors.white),
