@@ -37,6 +37,7 @@ class _cashtodigState extends State<cashtodig> {
       // return 0;
     }
     }
+    
 
     
     
@@ -86,7 +87,7 @@ class _cashtodigState extends State<cashtodig> {
         ElevatedButton(onPressed: (){
           upDateOTP(number);
           Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => paymentScreen(amt: myController)));
+          builder: (context) => paymentScreen(amt: myController.text)));
 
         }, child: Text("Request"))
         

@@ -3,22 +3,12 @@ import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
-class paymentScreen extends StatefulWidget {
-  const paymentScreen({key ,  this.amt}) : super(key: key);
+class paymentScreen extends StatelessWidget {
+  const paymentScreen({ key,this.amt }) : super(key: key);
+  final String amt;
 
-  final TextEditingController amt;
-  
-  
-
-  @override
-  _paymentScreenState createState() => _paymentScreenState();
-}
-
-class _paymentScreenState extends State<paymentScreen> {
   @override
   Widget build(BuildContext context) {
-    
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -39,20 +29,21 @@ class _paymentScreenState extends State<paymentScreen> {
           height: 50,
         ),
         
-        TextField(),
-        const SizedBox(
-          height: 50,
-        ),
         Row(
           children: [
-            Text("OTP:"),
-            Text()
+            
+            Text('$amt')
             
 
           ],
           mainAxisAlignment: MainAxisAlignment.center,
 
         ),
+
+        const SizedBox(
+          height: 50,
+        ),
+        ElevatedButton(onPressed: (){}, child: Text("PAY"),)
 
         
         
