@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/qrcode/scan.dart';
 
 
-class HomePage extends StatefulWidget {
+
+class intermediate extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _intermediateState createState() => _intermediateState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _intermediateState extends State<intermediate> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Homepage"),
+        title: Text("intermediate"),
         centerTitle: true,
       ),
       body: Container(
@@ -22,10 +24,7 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            Image(image: NetworkImage("https://media.istockphoto.com/vectors/qr-code-scan-phone-icon-in-comic-style-scanner-in-smartphone-vector-vector-id1166145556%22)),
-            flatButton("Scan QR CODE", ),
-            SizedBox(height: 20.0,),
-            
+            flatButton("sdsf", ScanPage())
           ],
         ),
       ),
