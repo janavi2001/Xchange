@@ -19,8 +19,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Xchange',
-      // home: Order(),
-      home: MapSample(),
+      
+      home: MyHomePage(),
       debugShowCheckedModeBanner: false,
     );
   }

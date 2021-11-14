@@ -3,13 +3,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:my_app/auth/login.dart';
 
 
-void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  runApp(App());
-}
 
 class App extends StatelessWidget {
-  // Create the initialization Future outside of `build`:
   final Future<FirebaseApp> _initialization = Firebase.initializeApp();
 
   @override
