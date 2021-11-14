@@ -4,14 +4,15 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:my_app/userside/paymentScreen.dart';
 
-class cashtodig extends StatefulWidget {
-  const cashtodig({key}) : super(key: key);
+class digtocash extends StatefulWidget {
+  const digtocash
+({key}) : super(key: key);
 
   @override
   _cashtodigState createState() => _cashtodigState();
 }
 
-class _cashtodigState extends State<cashtodig> {
+class _cashtodigState extends State<digtocash> {
   @override
   Widget build(BuildContext context) {
 

@@ -2,7 +2,9 @@ import 'dart:async';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:my_app/auth/authentication.dart';
-import 'package:my_app/userside/CashToDig.dart';
+import 'package:my_app/userside/DigtoCash.dart';
+import 'package:my_app/userside/TypeOfTrans.dart';
+import 'package:my_app/vendorside/Screens/vendorPage.dart';
 
 
 Future<void> main() async {
@@ -34,7 +36,7 @@ class MyApp extends StatelessWidget {
       // ),
       // home: Order(),
       // home: MyHomePage(),
-      home: cashtodig(),
+      home: transaction(),
 
       debugShowCheckedModeBanner: false,
     );
