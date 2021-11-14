@@ -1,7 +1,8 @@
-
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:my_app/qrcode/intermediate.dart';
+import 'package:my_app/widget/navigationWidgetUser.dart';
 import 'package:my_app/widget/navigationWidgetVendor.dart';
 
 class MapSample extends StatefulWidget {
@@ -27,50 +28,46 @@ class MapSampleState extends State<MapSample> {
 
   void _onMapCreated(GoogleMapController controller) {
     setState(() {
-      
-
-       _markers.add(
-         Marker(
-           onTap: (){
-             
-           },
-        markerId: MarkerId('id-1'),
-        position: LatLng(12.851066, 77.64669),
-        infoWindow: InfoWindow(title: 'Some Shop', snippet: 'Phno')
-        )
-        );
+      _markers.add(Marker(
+          onTap: () {},
+          markerId: MarkerId('id-1'),
+          position: LatLng(12.851066, 77.64669),
+          infoWindow: InfoWindow(title: 'Some Shop', snippet: 'Phno')));
     });
-   
   }
 
   @override
   Widget build(BuildContext context) {
-
     return new Scaffold(
-      drawer: NavigationDrawerWidget(),
+      drawer: NavigationDrawerWidgetUser(),
       appBar: AppBar(
-          title: Text(
-            "",
-            style: TextStyle(color: Colors.black),
-            textAlign: TextAlign.center,
-          ),
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          iconTheme: IconThemeData(color: Colors.black),
+        title: Text(
+          "",
+          style: TextStyle(color: Colors.black),
+          textAlign: TextAlign.center,
         ),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        iconTheme: IconThemeData(color: Colors.black),
+      ),
       body: Stack(
         children: <Widget>[
           GoogleMap(
-        mapType: MapType.normal,
-        markers: _markers,
-        initialCameraPosition: _kGooglePlex,
-        
-        onMapCreated: _onMapCreated
-        ,
-      ),Positioned(
-      top: 550,
-      right: 150,
-      child: ElevatedButton(onPressed: (){}, child: Text("Scanner"))),
+            mapType: MapType.normal,
+            markers: _markers,
+            initialCameraPosition: _kGooglePlex,
+            onMapCreated: _onMapCreated,
+          ),
+          Positioned(
+              top: 550,
+              right: 150,
+              child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => intermediate(),
+                    ));
+                  },
+                  child: Text("Scanner"))),
         ],
       ),
     );

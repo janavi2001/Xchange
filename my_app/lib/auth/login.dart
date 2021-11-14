@@ -5,6 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
 import 'package:my_app/auth/loggedin.dart';
 import 'package:my_app/auth/register.dart';
+import 'package:my_app/userside/mainScreen.dart';
 
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -38,7 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
       Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(
-          builder: (BuildContext context) => LoggedInScreen(),
+          builder: (BuildContext context) => MapSample(),
         ),
         (route) => false,
       );

@@ -13,7 +13,7 @@ class _intermediateState extends State<intermediate> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("intermediate"),
+        title: Text("ScanPage"),
         centerTitle: true,
       ),
       body: Container(
@@ -24,7 +24,7 @@ class _intermediateState extends State<intermediate> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            flatButton("sdsf", ScanPage())
+            flatButton("ScanQRCode ", ScanPage())
           ],
         ),
       ),
