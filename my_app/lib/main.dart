@@ -33,8 +33,8 @@ class MyApp extends StatelessWidget {
       //   ),
       // ),
       // home: Order(),
-      // home: MyHomePage(),
-      home: cashtodig(),
+      home: MyHomePage(),
+      // home: cashtodig(),
 
       debugShowCheckedModeBanner: false,
     );
