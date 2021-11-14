@@ -3,6 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:my_app/auth/authentication.dart';
 import 'package:my_app/qrcode/intermediate.dart';
+import 'package:my_app/userside/mainScreen.dart';
 import 'package:my_app/vendorside/Screens/vendorPage.dart';
 
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Xchange',
       // home: Order(),
-      home: VendorPage(),
+      home: MapSample(),
       debugShowCheckedModeBanner: false,
     );
   }
