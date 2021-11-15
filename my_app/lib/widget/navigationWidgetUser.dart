@@ -2,8 +2,16 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:my_app/auth/login.dart';
 
-class NavigationDrawerWidgetUser extends StatelessWidget {
+class NavigationDrawerWidgetUser extends StatefulWidget {
+  @override
+  _NavigationDrawerWidgetUserState createState() =>
+      _NavigationDrawerWidgetUserState();
+}
+
+class _NavigationDrawerWidgetUserState
+    extends State<NavigationDrawerWidgetUser> {
   final Padding = EdgeInsets.symmetric(horizontal: 20);
+
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   @override
@@ -27,15 +35,13 @@ class NavigationDrawerWidgetUser extends StatelessWidget {
               height: 48,
             ),
             buildMenuItem(
-                text: 'SignOut',
-                icon: Icons.people,
-                onClicked: (
-                  
-                ) => () {
-    //redirect
-    _auth.signOut().then((value) => Navigator.pushReplacement(context,
-        MaterialPageRoute(builder: (BuildContext context) => LoginScreen())));
-  }),
+              text: 'SignOut',
+              icon: Icons.people,
+              onClicked: () {
+                signOut();
+              },
+              //redirect
+            ),
             const SizedBox(
               height: 24,
             ),
@@ -118,5 +124,21 @@ class NavigationDrawerWidgetUser extends StatelessWidget {
       //   builder: (context) => ,
       // ));
     }
+  }
+
+  signOut() {
+    //redirect
+    _auth.signOut().then(
+          (value) => WidgetsBinding.instance.addPostFrameCallback(
+            (_) {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) => LoginScreen(),
+                ),
+              );
+            },
+          ),
+        );
   }
 }

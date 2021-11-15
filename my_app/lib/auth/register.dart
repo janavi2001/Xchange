@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart';
 import 'package:my_app/auth/loggedin.dart';
+import 'package:my_app/userside/mainScreen.dart';
 
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -261,7 +262,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                                     MaterialPageRoute(
                                                       builder: (BuildContext
                                                               context) =>
-                                                          LoggedInScreen(),
+                                                          MapSample(),
                                                     ),
                                                     (route) => false,
                                                   )
@@ -389,7 +390,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (BuildContext context) =>
-                                      LoggedInScreen(),
+                                      MapSample(),
                                 ),
                                 (route) => false,
                               );

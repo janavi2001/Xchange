@@ -246,7 +246,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                                     MaterialPageRoute(
                                                       builder: (BuildContext
                                                               context) =>
-                                                          LoggedInScreen(),
+                                                          MapSample(),
                                                     ),
                                                     (route) => false,
                                                   )
@@ -382,7 +382,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
-                        builder: (BuildContext context) => LoggedInScreen(),
+                        builder: (BuildContext context) => MapSample(),
                       ),
                       (route) => false,
                     )

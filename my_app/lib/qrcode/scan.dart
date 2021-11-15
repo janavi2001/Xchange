@@ -45,6 +45,7 @@ class _ScanPageState extends State<ScanPage> {
                 setState(() {
                   qrCodeResult = codeSanner;
                 });
+                
 
                 // try{
                 //   BarcodeScanner.scan()    this method is used to scan the QR code
