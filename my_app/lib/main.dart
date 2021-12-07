@@ -78,6 +78,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:my_app/auth/login.dart';
+import 'package:my_app/userside/TypeOfTrans.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -112,7 +113,8 @@ class App extends StatelessWidget {
                 inputDecorationTheme: InputDecorationTheme(
                     labelStyle: TextStyle(color: Colors.grey)),
                 backgroundColor: Colors.white),
-            home: LoginScreen(),
+            // home: LoginScreen(),
+            home:transaction(),
           );
         }
 
