@@ -61,6 +61,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
         body: ListView(children: [
           new Column(
             children: [
+              SizedBox(
+                        width: 150,
+                        height:150,
+                      ),
               Form(
                   key: _formKey,
                   child: Column(
@@ -107,6 +111,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           },
                         ),
                       )),
+                      SizedBox(
+                        width: 250,
+                        height:250,
+                      ),
                       Container(
                           margin: EdgeInsets.only(top: 40, bottom: 5),
                           child: Padding(

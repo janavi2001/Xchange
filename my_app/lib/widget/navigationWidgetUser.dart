@@ -22,7 +22,7 @@ class _NavigationDrawerWidgetUserState
         "https://i.picsum.photos/id/1019/200/200.jpg?hmac=KHfXQt_BONEwuWtr85KJ-jStSnVp_GL9FWpJXW_XtKw";
     return Drawer(
       child: Material(
-        color: Colors.blue,
+        color: Colors.indigo,
         child: ListView(
           padding: Padding,
           children: <Widget>[
@@ -35,6 +35,42 @@ class _NavigationDrawerWidgetUserState
               height: 48,
             ),
             buildMenuItem(text: 'Account Info', icon: Icons.people),
+            const Divider(
+              color: Colors.white70,
+            ),
+            const SizedBox(
+              height: 24,
+            ),
+            buildMenuItem(
+              text: 'Change Profile',
+              icon: Icons.person,
+              
+              //redirect
+            ),
+            const Divider(
+              color: Colors.white70,
+            ),
+            const SizedBox(
+              height: 24,
+            ),
+            buildMenuItem(
+              text: 'Vendor ratings ',
+              icon: Icons.person,
+              
+              //redirect
+            ),
+            const Divider(
+              color: Colors.white70,
+            ),
+            const SizedBox(
+              height: 24,
+            ),
+            buildMenuItem(
+              text: 'Concerns',
+              icon: Icons.person,
+              
+              //redirect
+            ),
             const Divider(
               color: Colors.white70,
             ),

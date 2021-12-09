@@ -114,8 +114,8 @@ class App extends StatelessWidget {
                 inputDecorationTheme: InputDecorationTheme(
                     labelStyle: TextStyle(color: Colors.grey)),
                 backgroundColor: Colors.white),
-            // home: LoginScreen(),
-            home:transaction(),
+            home: LoginScreen(),
+            //home:transaction(),
           );
         }
 

@@ -18,7 +18,8 @@ class _transactionState extends State<transaction> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        iconTheme: IconThemeData(color: Colors.black),
+        iconTheme: IconThemeData(color: Colors.white),
+        
       ),
       body: ListView(padding: EdgeInsets.all(24),
        children: [

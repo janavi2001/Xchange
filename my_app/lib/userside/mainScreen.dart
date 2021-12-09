@@ -43,13 +43,13 @@ class MapSampleState extends State<MapSample> {
       appBar: AppBar(
         title: Text(
           "XChange",
-          style: TextStyle(color: Colors.black),
-          
+          style: TextStyle(color: Colors.white),
         ),
         
-        backgroundColor: Colors.transparent,
+        foregroundColor: Colors.indigo,
+        backgroundColor: Colors.indigo,
         elevation: 0,
-        iconTheme: IconThemeData(color: Colors.black),
+        iconTheme: IconThemeData(color: Colors.white),
       ),
       body: Stack(
         children: <Widget>[

@@ -14,7 +14,7 @@ class NavigationDrawerWidget extends StatelessWidget {
         "https://i.picsum.photos/id/1019/200/200.jpg?hmac=KHfXQt_BONEwuWtr85KJ-jStSnVp_GL9FWpJXW_XtKw";
     return Drawer(
       child: Material(
-        color: Colors.blue,
+        color: Colors.indigo,
         child: ListView(
           padding: Padding,
           children: <Widget>[
@@ -37,7 +37,37 @@ class NavigationDrawerWidget extends StatelessWidget {
               height: 24,
             ),
             buildMenuItem(
-                text: 'Log Out',
+                text: 'User rating',
+                icon: Icons.people,
+                onClicked: () => selectedItem(context, 0)),
+            const Divider(
+              color: Colors.white70,
+            ),
+            const SizedBox(
+              height: 24,
+            ),
+            buildMenuItem(
+                text: 'Transaction',
+                icon: Icons.people,
+                onClicked: () => selectedItem(context, 0)),
+            const Divider(
+              color: Colors.white70,
+            ),
+            const SizedBox(
+              height: 24,
+            ),
+            buildMenuItem(
+                text: 'Balance',
+                icon: Icons.people,
+                onClicked: () => selectedItem(context, 0)),
+            const Divider(
+              color: Colors.white70,
+            ),
+            const SizedBox(
+              height: 24,
+            ),
+            buildMenuItem(
+                text: 'Sign Out',
                 icon: Icons.person,
                 onClicked: () => {
                       _auth.signOut().then((value) => Navigator.pushReplacement(

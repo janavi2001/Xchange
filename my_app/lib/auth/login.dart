@@ -63,7 +63,8 @@ class _LoginScreenState extends State<LoginScreen> {
     return Scaffold(
         key: _scaffoldKey,
         appBar: new AppBar(
-          title: Text('Login Screen'),
+          title: Text('Login Screen'
+          ),
         ),
         body: ListView(children: [
           new Column(
@@ -71,7 +72,12 @@ class _LoginScreenState extends State<LoginScreen> {
               Form(
                   key: _formKey,
                   child: Column(
+                    
                     children: [
+                      SizedBox(
+                        width: 175,
+                        height:175,
+                      ),
                       Container(
                           child: Padding(
                         padding: const EdgeInsets.symmetric(
@@ -89,6 +95,10 @@ class _LoginScreenState extends State<LoginScreen> {
                           },
                         ),
                       )),
+                      SizedBox(
+                        width: 250,
+                        height:250,
+                      ),
                       Container(
                           margin: EdgeInsets.only(top: 40, bottom: 5),
                           child: Padding(
