@@ -16,6 +16,7 @@ class digtocash extends StatefulWidget {
 class _cashtodigState extends State<digtocash> {
   @override
   Widget build(BuildContext context) {
+    int nu =0;
 
     String number = Random().nextInt(9999).toString().padLeft(4, '0');
 
@@ -40,6 +41,31 @@ class _cashtodigState extends State<digtocash> {
       print(e);
       // return 0;
     }
+    }
+    String username ='name';
+    CollectionReference t = FirebaseFirestore.instance.collection('VENDOR').doc('0000').collection('REQUESTS');
+    Future<void> addreq() {
+      // Call the user's CollectionReference to add a new user
+      return t
+          .add({
+            'name': username, // John Doe
+            'docid': _auth.currentUser.uid, // Stokes and Sons
+            'requestamt': myController.text // 42
+          })
+          .then((value) => print("User Added"))
+          .catchError((error) => print("Failed to add user: $error"));
+    }
+    Future<String> retreivename() async {
+      FirebaseFirestore.instance
+        .collection('users')
+        .doc(FirebaseAuth.instance.currentUser.uid)
+        .get()
+        .then((result) {
+      username = result.data()['name'];
+    });
+    return username;
+    
+      
     }
     
 
@@ -66,7 +92,8 @@ class _cashtodigState extends State<digtocash> {
           height: 50,
         ),
         
-        TextField( controller: myController,),
+        TextField( controller: myController,
+        ),
         const SizedBox(
           height: 50,
         ),
@@ -89,7 +116,11 @@ class _cashtodigState extends State<digtocash> {
           height: 50,
         ),
         ElevatedButton(onPressed: (){
+          retreivename();
+          addreq();
+
           upDateOTP(number);
+
           Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => paymentScreen(amt: myController.text)));
 

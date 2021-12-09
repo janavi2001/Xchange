@@ -46,7 +46,8 @@ class ItemWidget extends StatelessWidget {
                 Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => acceptPay(
                     name: name,
-                    docid:docid
+                    docid:docid,
+                    amt : amt,
                   ),
                 ))
               },

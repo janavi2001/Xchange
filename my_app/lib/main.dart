@@ -20,7 +20,7 @@
 //     return MaterialApp(
 //       title: 'Xchange',
       
-//       home: MyHomePage(),
+//       home: MapSample(),
 //       debugShowCheckedModeBanner: false,
 //     );
 //   }
@@ -75,6 +75,7 @@
 //     );
 //   }
 // }
+
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:my_app/auth/login.dart';
@@ -107,8 +108,8 @@ class App extends StatelessWidget {
             title: 'Phone Verification',
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
-                primaryColor: Colors.yellow,
-                primarySwatch: Colors.yellow,
+                primaryColor: Colors.blueAccent[900],
+                primarySwatch: Colors.indigo,
                 inputDecorationTheme: InputDecorationTheme(
                     labelStyle: TextStyle(color: Colors.grey)),
                 backgroundColor: Colors.white),

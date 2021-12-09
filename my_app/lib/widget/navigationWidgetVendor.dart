@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:my_app/auth/login.dart';
 
 class NavigationDrawerWidget extends StatelessWidget {
   final Padding = EdgeInsets.symmetric(horizontal: 20);
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
-    final name = "small";
-    final email = "email";
+    final name = "Raju Bhai";
+    final email = "rajubhai@gmail.com";
     final urlImage =
         "https://i.picsum.photos/id/1019/200/200.jpg?hmac=KHfXQt_BONEwuWtr85KJ-jStSnVp_GL9FWpJXW_XtKw";
     return Drawer(
@@ -24,23 +27,25 @@ class NavigationDrawerWidget extends StatelessWidget {
               height: 48,
             ),
             buildMenuItem(
-                text: 'People',
+                text: 'Account Info',
                 icon: Icons.people,
                 onClicked: () => selectedItem(context, 0)),
-            const SizedBox(
-              height: 24,
-            ),
-            buildMenuItem(text: 'People', icon: Icons.people),
-            const SizedBox(
-              height: 24,
-            ),
             const Divider(
               color: Colors.white70,
             ),
             const SizedBox(
               height: 24,
             ),
-            buildMenuItem(text: 'People', icon: Icons.people),
+            buildMenuItem(
+                text: 'Log Out',
+                icon: Icons.person,
+                onClicked: () => {
+                      _auth.signOut().then((value) => Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  LoginScreen())))
+                    }),
           ],
         ),
       ),

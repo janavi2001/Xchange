@@ -1,14 +1,23 @@
 import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:my_app/razorpay/razorpaymain.dart';
 
 class paymentScreen extends StatelessWidget {
   const paymentScreen({ key,this.amt }) : super(key: key);
   final String amt;
 
+
+
+
+
   @override
+  
   Widget build(BuildContext context) {
+
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -43,7 +52,20 @@ class paymentScreen extends StatelessWidget {
         const SizedBox(
           height: 50,
         ),
-        ElevatedButton(onPressed: (){}, child: Text("PAY"),)
+        ElevatedButton(onPressed: (){
+          
+
+
+
+
+
+
+          Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => Wallet(amt : amt)));
+
+
+
+        }, child: Text("PAY "),)
 
         
         

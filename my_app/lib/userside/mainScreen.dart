@@ -32,7 +32,7 @@ class MapSampleState extends State<MapSample> {
           onTap: () {},
           markerId: MarkerId('id-1'),
           position: LatLng(12.851066, 77.64669),
-          infoWindow: InfoWindow(title: 'Some Shop', snippet: 'Phno')));
+          infoWindow: InfoWindow(title: 'Kantamma Sweets', snippet: 'Ph no: 9898634527')));
     });
   }
 
@@ -42,10 +42,11 @@ class MapSampleState extends State<MapSample> {
       drawer: NavigationDrawerWidgetUser(),
       appBar: AppBar(
         title: Text(
-          "",
+          "XChange",
           style: TextStyle(color: Colors.black),
-          textAlign: TextAlign.center,
+          
         ),
+        
         backgroundColor: Colors.transparent,
         elevation: 0,
         iconTheme: IconThemeData(color: Colors.black),

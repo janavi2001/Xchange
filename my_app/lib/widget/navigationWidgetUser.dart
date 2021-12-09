@@ -16,8 +16,8 @@ class _NavigationDrawerWidgetUserState
 
   @override
   Widget build(BuildContext context) {
-    final name = "small";
-    final email = "email";
+    final name = "Rajamma";
+    final email = "rajamma@gmail.com";
     final urlImage =
         "https://i.picsum.photos/id/1019/200/200.jpg?hmac=KHfXQt_BONEwuWtr85KJ-jStSnVp_GL9FWpJXW_XtKw";
     return Drawer(
@@ -34,28 +34,24 @@ class _NavigationDrawerWidgetUserState
             const SizedBox(
               height: 48,
             ),
-            buildMenuItem(
-              text: 'SignOut',
-              icon: Icons.people,
-              onClicked: () {
-                signOut();
-              },
-              //redirect
-            ),
-            const SizedBox(
-              height: 24,
-            ),
-            buildMenuItem(text: 'People', icon: Icons.people),
-            const SizedBox(
-              height: 24,
-            ),
+            buildMenuItem(text: 'Account Info', icon: Icons.people),
             const Divider(
               color: Colors.white70,
             ),
             const SizedBox(
               height: 24,
             ),
-            buildMenuItem(text: 'People', icon: Icons.people),
+            buildMenuItem(
+              text: 'SignOut',
+              icon: Icons.person,
+              onClicked: () {
+                _auth.signOut().then((value) => Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) => LoginScreen())));
+              },
+              //redirect
+            ),
           ],
         ),
       ),
