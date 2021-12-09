@@ -1,5 +1,6 @@
 import 'package:barcode_scan/barcode_scan.dart';
 import 'package:flutter/material.dart';
+import 'package:my_app/userside/TypeOfTrans.dart';
 
 class ScanPage extends StatefulWidget {
   @override
@@ -47,12 +48,12 @@ class _ScanPageState extends State<ScanPage> {
                 });
                 
 
-                // try{
-                //   BarcodeScanner.scan()    this method is used to scan the QR code
-                // }catch (e){
-                //   BarcodeScanner.CameraAccessDenied;   we can print that user has denied for the permisions
-                //   BarcodeScanner.UserCanceled;   we can print on the page that user has cancelled
-                // }
+                try{
+                  BarcodeScanner.scan();    //this method is used to scan the QR code
+                }catch (e){
+                  BarcodeScanner.CameraAccessDenied;   //we can print that user has denied for the permisions
+                  BarcodeScanner.UserCanceled;   //we can print on the page that user has cancelled
+                }
 
 
               },
@@ -64,7 +65,27 @@ class _ScanPageState extends State<ScanPage> {
               shape: RoundedRectangleBorder(
                   side: BorderSide(color: Colors.blue, width: 3.0),
                   borderRadius: BorderRadius.circular(20.0)),
+            ),
+            const SizedBox(height: 20,),
+            FlatButton(
+              padding: EdgeInsets.all(15.0),
+              onPressed: () async {
+                 Navigator.of(context)
+            .push(MaterialPageRoute(builder: (context) => transaction()));
+
+
+              },
+              child: Text(
+                "Go to Transaction",
+                style:
+                    TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+              ),
+              shape: RoundedRectangleBorder(
+                  side: BorderSide(color: Colors.blue, width: 3.0),
+                  borderRadius: BorderRadius.circular(20.0)),
             )
+            
+            
           ],
         ),
       ),

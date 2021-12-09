@@ -9,6 +9,8 @@ import 'package:razorpay_flutter/razorpay_flutter.dart';
 
 
 class Wallet extends StatefulWidget {
+   Wallet({Key key, this.amt}) : super(key: key);
+   final String amt;
   @override
   _WalletState createState() => _WalletState();
 }
@@ -17,7 +19,9 @@ class _WalletState extends State<Wallet> {
   int totalcredits = 1500;
   int finalcredits;
   int totalAmount = 0;
-  int credits;
+  
+  int credits ;
+
 
   Razorpay _razorpay;
   @override
@@ -40,7 +44,7 @@ class _WalletState extends State<Wallet> {
   void openCheckout() async {
     var options = {
       "key": "rzp_test_KGJBE28Acv0SKE",
-      "amount": totalAmount * 100,
+      "amount": credits*100,
       "name": "Sample App",
       "description": "Payment for the product",
       "prefill": {
@@ -116,20 +120,7 @@ class _WalletState extends State<Wallet> {
               maxWidth: 150.0,
               child: Container(
                 margin: EdgeInsets.all(40),
-                child: TextField(
-                  keyboardType: TextInputType.number,
-                  decoration:
-                      InputDecoration(hintText: 'Please enter some amount'),
-                  onChanged: (value) {
-                    setState(() {
-                      totalAmount = int.parse(value);
-                      int currentamount = totalcredits - totalAmount;
-                      Center(
-                          child: Text('Your current credits are:' +
-                              currentamount.toString()));
-                    });
-                  },
-                ),
+                child: Text("${widget.amt}")
               ),
             ),
             SizedBox(
@@ -137,6 +128,8 @@ class _WalletState extends State<Wallet> {
             ),
             ElevatedButton(
               onPressed: () {
+                credits = int.parse(widget.amt);
+
                 openCheckout();
               },
               child: Text(

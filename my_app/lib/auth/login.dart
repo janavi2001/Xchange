@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:my_app/auth/loggedin.dart';
 import 'package:my_app/auth/register.dart';
 import 'package:my_app/userside/mainScreen.dart';
-
+import 'package:my_app/vendorside/Screens/vendorPage.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 final FirebaseFirestore _firestore = FirebaseFirestore.instance;
@@ -147,7 +147,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                       'Sign up',
                                     ),
                                     onTap: () => {
-                                      Navigator.push(
+                                      Navigator.pushReplacement(
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) =>
@@ -241,15 +241,35 @@ class _LoginScreenState extends State<LoginScreen> {
                                                     isLoading = false;
                                                     isResend = false;
                                                   }),
-                                                  Navigator.pushAndRemoveUntil(
-                                                    context,
-                                                    MaterialPageRoute(
-                                                      builder: (BuildContext
-                                                              context) =>
-                                                          MapSample(),
-                                                    ),
-                                                    (route) => false,
-                                                  )
+                                                  if (_auth.currentUser.uid ==
+                                                      "uwxaUTG5kMOJP6AwKvLgm3wzgqk1")
+                                                    {
+                                                      Navigator
+                                                          .pushAndRemoveUntil(
+                                                        context,
+                                                        MaterialPageRoute(
+                                                          builder: (BuildContext
+                                                                  context) =>
+                                                              MapSample(),
+                                                        ),
+                                                        (route) => false,
+                                                      )
+                                                    }
+                                                  else if (_auth
+                                                          .currentUser.uid ==
+                                                      "Toid5R8L5gSAduo1N18eHceX1qn1")
+                                                    {
+                                                      Navigator
+                                                          .pushAndRemoveUntil(
+                                                        context,
+                                                        MaterialPageRoute(
+                                                          builder: (BuildContext
+                                                                  context) =>
+                                                              VendorPage(),
+                                                        ),
+                                                        (route) => false,
+                                                      )
+                                                    }
                                                 }
                                             })
                                         .catchError((error) => {
@@ -349,7 +369,7 @@ class _LoginScreenState extends State<LoginScreen> {
       isLoading = true;
     });
 
-    var phoneNumber = '+27 ' + numberController.text.trim();
+    var phoneNumber = '+91' + numberController.text.trim();
 
     //first we will check if a user with this cell number exists
     var isValidUser = false;

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class acceptPay extends StatelessWidget {
-  const acceptPay({  key , this.name ,this.docid}) : super(key: key);
+  const acceptPay({  key , this.name ,this.docid , this.amt}) : super(key: key);
   final String name;
   final String docid;
+  final String amt;
   
 
   @override
@@ -27,7 +28,7 @@ class acceptPay extends StatelessWidget {
           height: 50,
         ),
         Text(
-          "100",
+          "$amt",
           style: TextStyle(color: Colors.blue, fontSize: 32),
           textAlign: TextAlign.center,
         ),
@@ -44,6 +45,8 @@ class acceptPay extends StatelessWidget {
           height: 50,
         ),
         TextField(
+          style: TextStyle(height: 2),
+          decoration: new InputDecoration.collapsed(hintText: "Enter OTP",border: OutlineInputBorder(  borderSide: BorderSide(color: Colors.blue))),textAlign: TextAlign.center,
           
         ),
         Row(
